@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node examples/http.js",
     "https": "HTTPS_KEY=test/https/server.key HTTPS_CERT=test/https/server.crt npm start",
+    "prepublish:lockfile": "npx yarn-tool lockfile --npm --overwrite",
     "prepublishOnly": "npm run unbuild",
     "test": "mocha",
     "testsea": "mocha test/sea.js",
@@ -64,12 +65,14 @@
     "text-encoding": "^0.7.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
     "@types/ip": "^1.1.0",
     "@types/mocha": "^7.0.1",
     "@types/node": "^13.7.0",
     "@types/uglify-js": "^3.0.4",
     "@types/ws": "^7.2.1",
     "aws-sdk": "^2.528.0",
+    "express": "^4.17.1",
     "ip": "^1.1.5",
     "mocha": "^6.2.0",
     "panic-manager": "^1.2.0",
